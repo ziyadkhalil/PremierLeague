@@ -13,6 +13,7 @@ class AppRepo(val dataSourceFactory: TeamDataSourceFactory): Repo {
 
 
     override fun getPagedTeams(): Observable<PagedList<Team>> {
-       return RxPagedListBuilder(dataSourceFactory,5).buildObservable()
+       return RxPagedListBuilder(dataSourceFactory,5)
+           .buildObservable()
     }
 }
