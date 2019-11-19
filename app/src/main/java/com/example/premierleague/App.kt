@@ -1,6 +1,7 @@
 package com.example.premierleague
 
 import android.app.Application
+import com.example.premierleague.di.repoModule
 import com.example.premierleague.di.retrofitModule
 import com.example.premierleague.di.roomModule
 import org.koin.android.ext.koin.androidContext
@@ -16,7 +17,7 @@ class App: Application() {
         startKoin {
             androidLogger()
             androidContext(this@App)
-            modules(listOf(retrofitModule, roomModule))
+            modules(listOf(retrofitModule, roomModule, repoModule))
         }
     }
 }

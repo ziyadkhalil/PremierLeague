@@ -43,5 +43,7 @@ data class Team (
     @ColumnInfo(name  = "pendingPlayers")
     val pendingPlayers: Boolean
     ) {
+
+    @Ignore
     val players:  List<Player> =  listOf()
 }
