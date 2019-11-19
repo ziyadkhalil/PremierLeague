@@ -2,6 +2,7 @@ package com.example.premierleague.data.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Ignore
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import java.util.*
@@ -34,14 +35,13 @@ data class Team (
 
     @SerializedName("lastUpdated")
     @ColumnInfo(name = "lastUpdated")
-    val lastUpdated: Date,
+    val lastUpdated: String,
 
     @ColumnInfo(name = "isUpdated")
     var isUpdated: Boolean,
 
     @ColumnInfo(name  = "pendingPlayers")
-    val pendingPlayers: Boolean,
-
-    @ColumnInfo(name = "players")
-    val players: List<String>
-    )
+    val pendingPlayers: Boolean
+    ) {
+    val players:  List<Player> =  listOf()
+}
