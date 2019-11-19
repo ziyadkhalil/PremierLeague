@@ -1,7 +1,8 @@
-package com.example.premierleague
+package com.example.premierleague.features.teamslistfeature
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.premierleague.R
 
 class MainActivity : AppCompatActivity() {
 
