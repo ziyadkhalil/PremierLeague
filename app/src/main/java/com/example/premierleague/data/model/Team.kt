@@ -41,10 +41,11 @@ data class Team (
     var isUpdated: Boolean,
 
     @ColumnInfo(name  = "pendingPlayers")
-    var pendingPlayers: Boolean = true,
 
-    @ColumnInfo(name = "index")
-    val index: Int
+    var pendingPlayers: Boolean,
+
+    @ColumnInfo(name = "favourite")
+    var liked: Boolean
     ) {
 
     @Ignore

@@ -1,5 +1,7 @@
 package com.example.premierleague.features.teamslistfeature
 
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +10,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.premierleague.R
 import com.example.premierleague.data.model.Team
+import com.like.LikeButton
 import kotlinx.android.synthetic.main.team_list_item.view.*
 
 /**
@@ -28,7 +31,24 @@ class TeamsListAdapter: PagedListAdapter<Team, TeamsListAdapter.TeamViewHolder>(
 
     class TeamViewHolder(val viewHolder: View): RecyclerView.ViewHolder(viewHolder) {
         fun bindTeam(team: Team) {
-            viewHolder.teamName.text = team.name
+            viewHolder.teamNameTv.text = team.name
+            viewHolder.websiteTv.text = team.website
+            viewHolder.websiteTv.setOnClickListener {
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = Uri.parse(team.website)
+                viewHolder.context.startActivity(intent)
+            }
+            viewHolder.venueTv.text = team.venue
+            viewHolder.colorsTv.text = team.clubColors
+            viewHolder.favBtn.isLiked = team.liked
+            viewHolder.favBtn.setOnClickListener { btn ->
+                if((btn as LikeButton).isLiked) {
+                    team.liked = true
+                    //viewmodel code to update db
+                } else {
+                    btn.isLiked = true
+                }
+            }
         }
     }
 
