@@ -15,11 +15,11 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.view.*
-import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class LikedTeamsFragment : Fragment() {
 
-    private val appViewModel: AppViewModel by viewModel()
+    private val appViewModel: AppViewModel by sharedViewModel()
     private val compositeDisposable = CompositeDisposable()
 
     override fun onCreateView(

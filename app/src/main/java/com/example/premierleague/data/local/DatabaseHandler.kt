@@ -4,6 +4,7 @@ import com.example.premierleague.data.model.Player
 import com.example.premierleague.data.model.Team
 import io.reactivex.Completable
 import io.reactivex.Observable
+import io.reactivex.Single
 
 /**
  * Created by Ziyad on Nov, 2019
@@ -17,4 +18,5 @@ interface DatabaseHandler {
     fun unlikeTeam(team: Team): Completable
     fun getPlayers(teamId: Int): Observable<List<Player>>
     fun savePlayers(players: List<Player>): Completable
+    fun getTeam(teamId: Int): Single<Team>
 }

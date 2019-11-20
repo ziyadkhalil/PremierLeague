@@ -3,6 +3,7 @@ import com.example.premierleague.data.model.Player
 import com.example.premierleague.data.model.Team
 import io.reactivex.Completable
 import io.reactivex.Observable
+import io.reactivex.Single
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 
@@ -46,4 +47,7 @@ class AppDatabaseHandler: DatabaseHandler, KoinComponent {
         return  appDatabase.playersDao().savePlayers(players)
     }
 
+    override fun getTeam(teamId: Int): Single<Team> {
+        return appDatabase.teamDao().getTeam(teamId)
+    }
 }

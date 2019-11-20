@@ -34,6 +34,10 @@ data class Player(
     @ColumnInfo(name = "position")
     val position: String?,
 
+    @SerializedName("role")
+    @ColumnInfo(name = "role")
+    val role: String,
+
     @SerializedName("dateOfBirth")
     @ColumnInfo(name = "dob")
     val dob: String?,

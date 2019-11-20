@@ -4,6 +4,7 @@ import androidx.room.*
 import com.example.premierleague.data.model.Team
 import io.reactivex.Completable
 import io.reactivex.Observable
+import io.reactivex.Single
 
 /**
  * Created by Ziyad on Nov, 2019
@@ -29,4 +30,7 @@ interface TeamDao {
 
     @Query("UPDATE Team SET favourite = 0 WHERE id == :teamId")
     fun unlikeTeam(teamId: Int): Completable
+
+    @Query("SELECT * FROM TEAM WHERE id == :teamId")
+    fun getTeam(teamId: Int): Single<Team>
 }

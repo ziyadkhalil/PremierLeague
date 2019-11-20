@@ -5,6 +5,7 @@ import androidx.room.Entity
 import androidx.room.Ignore
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 import java.util.*
 
 /**
@@ -12,7 +13,7 @@ import java.util.*
  */
 
 @Entity
-data class Team (
+data class Team  (
     @SerializedName("id")
     @PrimaryKey
     val id: Int,
@@ -37,11 +38,30 @@ data class Team (
     @ColumnInfo(name = "lastUpdated")
     val lastUpdated: String,
 
+    @SerializedName("crestUrl")
+    @ColumnInfo(name = "crestUrl")
+    val crestUrl: String?,
+
+    @SerializedName("phone")
+    @ColumnInfo(name = "phone")
+    val phone: String?,
+
+    @SerializedName("founded")
+    @ColumnInfo(name = "founded")
+    val founded: String?,
+
+    @SerializedName("email")
+    @ColumnInfo(name = "email")
+    val email: String?,
+
+    @SerializedName("address")
+    @ColumnInfo(name = "address")
+    val address: String?,
+
     @ColumnInfo(name = "isUpdated")
     var isUpdated: Boolean,
 
     @ColumnInfo(name  = "pendingPlayers")
-
     var pendingPlayers: Boolean,
 
     @ColumnInfo(name = "favourite")

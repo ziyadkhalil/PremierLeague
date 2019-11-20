@@ -13,5 +13,5 @@ import org.koin.dsl.module
 val repoModule = module {
     single {TeamDataSourceFactory(get(), get())}
     single {LikedTeamsDataSourceFactory(get(), get())}
-    single<Repo> {AppRepo(get(),get(),get())}
+    single<Repo> {AppRepo(get(),get(),get(),get())}
 }

@@ -8,4 +8,5 @@ import com.example.premierleague.data.model.Team
 interface TeamsView {
     fun likeTeam(team: Team)
     fun unlikeTeam(team: Team)
+    fun openTeamDetails(team: Team)
 }

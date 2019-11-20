@@ -39,6 +39,9 @@ class TeamsListAdapter(private val likedTeamsFragment: Boolean, val teamsView: T
                 intent.data = Uri.parse(team.website)
                 viewHolder.context.startActivity(intent)
             }
+            viewHolder.setOnClickListener {
+                teamsView?.openTeamDetails(team)
+            }
             viewHolder.venueTv.text = team.venue
             viewHolder.colorsTv.text = team.clubColors
             if(!likedTeamsFragment){
