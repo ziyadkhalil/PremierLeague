@@ -24,7 +24,7 @@ data class Player(
     val id: Int,
 
     @ColumnInfo(name = "teamId")
-    val teamId: Int,
+    var teamId: Int,
 
     @SerializedName("name")
     @ColumnInfo(name = "name")
@@ -32,11 +32,11 @@ data class Player(
 
     @SerializedName("position")
     @ColumnInfo(name = "position")
-    val position: String,
+    val position: String?,
 
     @SerializedName("dateOfBirth")
     @ColumnInfo(name = "dob")
-    val dob: Date,
+    val dob: String?,
 
     @SerializedName("nationality")
     @ColumnInfo(name = "nationality")

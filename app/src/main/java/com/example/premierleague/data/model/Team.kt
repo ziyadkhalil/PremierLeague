@@ -41,9 +41,12 @@ data class Team (
     var isUpdated: Boolean,
 
     @ColumnInfo(name  = "pendingPlayers")
-    val pendingPlayers: Boolean
+    var pendingPlayers: Boolean = true,
+
+    @ColumnInfo(name = "index")
+    val index: Int
     ) {
 
     @Ignore
-    val players:  List<Player> =  listOf()
+    var players: List<Player> = listOf()
 }
