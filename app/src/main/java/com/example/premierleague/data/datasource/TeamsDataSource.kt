@@ -23,13 +23,15 @@ class TeamsDataSource(private val database: DatabaseHandler, private val api: Ap
                             apiTeams.forEach { team ->
                                 team.pendingPlayers = true
                             }
-                            callback.onResult(apiTeams.subList(params.startPosition, params.startPosition + params.loadSize))
                             database.saveTeams(*apiTeams.toTypedArray()).subscribe()
+                            callback.onResult(apiTeams.subList(params.startPosition, params.startPosition + params.loadSize))
+                            disposables.clear()
                         } , { e ->
                             Log.e(":(", e.message, e)
                         })
                 } else {
                     callback.onResult(dpTeams.subList(params.startPosition, params.startPosition + params.loadSize))
+                    disposables.clear()
                 }
             }
         )

@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory
  * Created by Ziyad on Nov, 2019
  */
 
-var retrofitModule = module {
+val retrofitModule = module {
     factory {
         AuthInterceptor()
     }

@@ -12,7 +12,7 @@ import org.koin.core.inject
 class AppDatabaseHandler: DatabaseHandler, KoinComponent {
 
 
-    val appDatabase: AppDatabase by inject()
+    private val appDatabase: AppDatabase by inject()
 
     override fun saveTeams(vararg teams: Team): Completable {
         return appDatabase.teamDao().insertTeams(*teams)
@@ -24,6 +24,18 @@ class AppDatabaseHandler: DatabaseHandler, KoinComponent {
 
     override fun getTeams(): Observable<List<Team>> {
         return appDatabase.teamDao().getTeams()
+    }
+
+    override fun getLikedTeams(): Observable<List<Team>> {
+        return appDatabase.teamDao().getLikedTeams()
+    }
+
+    override fun likeTeam(team: Team): Completable {
+        return appDatabase.teamDao().likeTeam(team.id)
+    }
+
+    override fun unlikeTeam(team: Team): Completable {
+        return appDatabase.teamDao().unlikeTeam(team.id)
     }
 
     override fun getPlayers(teamId: Int): Observable<List<Player>> {

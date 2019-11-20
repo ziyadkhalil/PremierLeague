@@ -12,6 +12,9 @@ interface DatabaseHandler {
     fun  saveTeams(vararg teams: Team): Completable
     fun  updateTeams(vararg teams: Team): Completable
     fun  getTeams(): Observable<List<Team>>
+    fun getLikedTeams(): Observable<List<Team>>
+    fun likeTeam(team: Team): Completable
+    fun unlikeTeam(team: Team): Completable
     fun getPlayers(teamId: Int): Observable<List<Player>>
     fun savePlayers(players: List<Player>): Completable
 }
