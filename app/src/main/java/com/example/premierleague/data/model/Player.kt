@@ -11,13 +11,7 @@ import java.util.*
  * Created by Ziyad on Nov, 2019
  */
 
-@Entity(foreignKeys = [ForeignKey(
-    entity = Team::class,
-    parentColumns = arrayOf("id"),
-    childColumns = arrayOf("teamId"),
-    onDelete = ForeignKey.CASCADE
-)]
-)
+@Entity
 data class Player(
     @PrimaryKey
     @SerializedName("id")

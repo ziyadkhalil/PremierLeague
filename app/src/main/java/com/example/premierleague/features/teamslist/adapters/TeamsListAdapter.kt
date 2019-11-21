@@ -1,4 +1,4 @@
-package com.example.premierleague.features.teamslistfeature
+package com.example.premierleague.features.teamslist.adapters
 
 import android.content.Intent
 import android.net.Uri
@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.premierleague.R
 import com.example.premierleague.data.model.Team
+import com.example.premierleague.features.teamslist.TeamsView
 import com.like.LikeButton
 import com.like.OnLikeListener
 import kotlinx.android.synthetic.main.team_list_item.view.*
@@ -17,10 +18,16 @@ import kotlinx.android.synthetic.main.team_list_item.view.*
 /**
  * Created by Ziyad on Nov, 2019
  */
-class TeamsListAdapter(private val likedTeamsFragment: Boolean, val teamsView: TeamsView?): PagedListAdapter<Team, TeamsListAdapter.TeamViewHolder>(DIFF_CALLBACK) {
+class TeamsListAdapter(private val likedTeamsFragment: Boolean, val teamsView: TeamsView?): PagedListAdapter<Team, TeamsListAdapter.TeamViewHolder>(
+    DIFF_CALLBACK
+) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TeamViewHolder {
         val inflatedView = LayoutInflater.from(parent.context).inflate(R.layout.team_list_item, parent, false)
-        return TeamViewHolder(inflatedView, likedTeamsFragment ,teamsView)
+        return TeamViewHolder(
+            inflatedView,
+            likedTeamsFragment,
+            teamsView
+        )
     }
 
     override fun onBindViewHolder(holder: TeamViewHolder, position: Int) {

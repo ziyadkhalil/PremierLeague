@@ -10,10 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".features.teamdetailsfeature.TeamDetails">
+        <activity android:name=".features.teamsdetails.TeamDetailsActivity">
 
         </activity>
-        <activity android:name=".features.teamslistfeature.TeamsListActivity">
+        <activity android:name=".features.teamslist.TeamsListActivity">
             <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 

@@ -1,5 +1,6 @@
-package com.example.premierleague.data.local
+package com.example.premierleague.data.local.dao
 
+import androidx.paging.DataSource
 import androidx.room.*
 import com.example.premierleague.data.model.Team
 import io.reactivex.Completable
@@ -17,13 +18,13 @@ interface TeamDao {
     fun insertTeams(vararg teams: Team): Completable
 
     @Update
-    fun updateTeams(vararg teams: Team): Completable
+    fun updateTeams(team: Team): Completable
 
     @Query("SELECT * FROM Team")
-    fun getTeams(): Observable<List<Team>>
+    fun getTeams(): DataSource.Factory<Int, Team>
 
     @Query("SELECT * FROM TEAM WHERE favourite == 1")
-    fun getLikedTeams(): Observable<List<Team>>
+    fun getLikedTeams(): DataSource.Factory<Int, Team>
 
     @Query("UPDATE Team SET favourite = 1 WHERE id == :teamId")
     fun likeTeam(teamId: Int): Completable

@@ -1,4 +1,4 @@
-package com.example.premierleague.features.teamdetailsfeature
+package com.example.premierleague.features.teamsdetails
 
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.player_vh.view.*
 /**
  * Created by Ziyad on Nov, 2019
  */
-class PlayersListAdapter(val players: List<Player>): RecyclerView.Adapter<PlayersListAdapter.ViewHolder>() {
+class PlayersListAdapter(var players: MutableList<Player>): RecyclerView.Adapter<PlayersListAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
          val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.player_vh, parent, false)

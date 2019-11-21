@@ -2,6 +2,8 @@ package com.example.premierleague.data.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
+import com.example.premierleague.data.local.dao.PlayersDao
+import com.example.premierleague.data.local.dao.TeamDao
 import com.example.premierleague.data.model.Player
 import com.example.premierleague.data.model.Team
 import org.koin.core.KoinComponent

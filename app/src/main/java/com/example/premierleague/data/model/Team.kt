@@ -67,7 +67,6 @@ data class Team  (
     @ColumnInfo(name = "favourite")
     var liked: Boolean
     ) {
-
     @Ignore
     var players: List<Player> = listOf()
 }

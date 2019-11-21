@@ -1,4 +1,5 @@
 package com.example.premierleague.data.local
+import androidx.paging.DataSource
 import com.example.premierleague.data.model.Player
 import com.example.premierleague.data.model.Team
 import io.reactivex.Completable
@@ -19,15 +20,15 @@ class AppDatabaseHandler: DatabaseHandler, KoinComponent {
         return appDatabase.teamDao().insertTeams(*teams)
     }
 
-    override fun updateTeams(vararg teams: Team): Completable {
-        return appDatabase.teamDao().updateTeams(*teams)
+    override fun updateTeam(team: Team): Completable {
+        return appDatabase.teamDao().updateTeams(team)
     }
 
-    override fun getTeams(): Observable<List<Team>> {
+    override fun getTeams(): DataSource.Factory<Int,Team> {
         return appDatabase.teamDao().getTeams()
     }
 
-    override fun getLikedTeams(): Observable<List<Team>> {
+    override fun getLikedTeams(): DataSource.Factory<Int,Team> {
         return appDatabase.teamDao().getLikedTeams()
     }
 
@@ -39,7 +40,7 @@ class AppDatabaseHandler: DatabaseHandler, KoinComponent {
         return appDatabase.teamDao().unlikeTeam(team.id)
     }
 
-    override fun getPlayers(teamId: Int): Observable<List<Player>> {
+    override fun getPlayers(teamId: Int): Single<List<Player>> {
         return appDatabase.playersDao().getPlayers(teamId)
     }
 

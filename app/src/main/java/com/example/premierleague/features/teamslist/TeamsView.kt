@@ -1,4 +1,4 @@
-package com.example.premierleague.features.teamslistfeature
+package com.example.premierleague.features.teamslist
 
 import com.example.premierleague.data.model.Team
 
