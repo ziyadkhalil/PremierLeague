@@ -14,10 +14,14 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="m">
-        <activity android:name=".features.teamsdetails.TeamDetailsActivity">
+        <activity android:name=".features.teamsdetails.TeamDetailsActivity"
+            android:configChanges="orientation|screenSize"
+            >
 
         </activity>
-        <activity android:name=".features.teamslist.TeamsListActivity">
+        <activity android:name=".features.teamslist.TeamsListActivity"
+            android:configChanges="orientation|screenSize"
+            >
             <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
