@@ -8,7 +8,7 @@ import com.example.premierleague.data.model.Team
 
 //Interface to communicate between list adapters and their correspending fragments
 interface TeamsView {
-    fun likeTeam(team: Team)
-    fun unlikeTeam(team: Team)
+    fun likeTeam(team: Team) = Unit
+    fun unlikeTeam(team: Team) = Unit
     fun openTeamDetails(team: Team)
 }
