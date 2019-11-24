@@ -16,10 +16,11 @@
         tools:targetApi="m">
         <activity android:name=".features.teamsdetails.TeamDetailsActivity"
             android:configChanges="orientation|screenSize"
-            >
+            android:launchMode="singleTask">
 
         </activity>
         <activity android:name=".features.teamslist.TeamsListActivity"
+            android:launchMode="singleTask"
             android:configChanges="orientation|screenSize"
             >
             <intent-filter>
