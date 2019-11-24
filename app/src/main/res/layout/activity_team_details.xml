@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:isScrollContainer="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:descendantFocusability="blocksDescendants"
+        android:id="@+id/constraintContainer"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:id="@+id/teamNameTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="40sp"
+            app:layout_constraintEnd_toStartOf="@id/foundedTv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Arsenal FC" />
+
+        <TextView
+            android:id="@+id/venueTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/teamNameTv"
+            app:layout_constraintTop_toBottomOf="@id/teamNameTv"
+            tools:text="Emirates Stadium" />
+
+        <TextView
+            android:layout_marginEnd="20dp"
+            android:id="@+id/foundedTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/teamColorsTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="1886" />
+
+        <TextView
+            android:layout_marginEnd="20dp"
+            android:id="@+id/teamColorsTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@id/venueTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Red / Black" />
+
+        <ImageView
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:src="@color/colorPrimaryDark"
+            app:layout_constraintTop_toBottomOf="@id/venueTv"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/crestIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="@string/team_crest"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/contact_info"
+            tools:layout_height="150dp"
+            tools:layout_width="100dp"
+            tools:src="@color/colorPrimaryDark" />
+
+        <TextView
+            android:id="@+id/contact_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/contact_info"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@id/teamNameTv"
+            app:layout_constraintTop_toBottomOf="@id/line1" />
+
+        <TextView
+            android:id="@+id/websiteTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            app:layout_constraintEnd_toStartOf="@id/crestIv"
+            app:layout_constraintStart_toStartOf="@id/teamNameTv"
+            app:layout_constraintTop_toBottomOf="@id/contact_info"
+            tools:text="www.arsenal.com" />
+
+        <TextView
+            android:id="@+id/emailTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/crestIv"
+            app:layout_constraintStart_toStartOf="@id/websiteTv"
+            app:layout_constraintTop_toBottomOf="@id/websiteTv"
+            tools:text="aloalo@gmail.com" />
+
+
+        <TextView
+            android:id="@+id/phoneNoTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/crestIv"
+            app:layout_constraintStart_toStartOf="@id/websiteTv"
+            app:layout_constraintTop_toBottomOf="@id/emailTv"
+            tools:text="01012042542" />
+
+
+        <TextView
+            android:id="@+id/addressTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/crestIv"
+            app:layout_constraintStart_toStartOf="@id/websiteTv"
+            app:layout_constraintTop_toBottomOf="@id/phoneNoTv"
+            tools:text="75 Drayton Park London N5 1BU" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:layout_constraintBottom_toTopOf="@id/playersTv"
+            app:constraint_referenced_ids="crestIv,addressTv,phoneNoTv,emailTv,websiteTv" />
+
+        <ImageView
+            android:id="@+id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:src="@color/colorPrimaryDark"
+            app:layout_constraintTop_toBottomOf="@id/barrier"
+            app:layout_constraintBottom_toTopOf="@id/playersTv"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/playersTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/squad"
+            app:layout_constraintBottom_toTopOf="@id/playersRv"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@id/teamNameTv"
+            app:layout_constraintTop_toBottomOf="@id/line2" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/playersRv"
+            android:layout_width="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:focusable="false"
+            android:scrollbars="vertical"
+            android:scrollbarFadeDuration="1"
+            app:layout_constraintTop_toBottomOf="@id/playersTv" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone"/>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/hideGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:constraint_referenced_ids="venueTv,foundedTv,teamNameTv,websiteTv,emailTv,phoneNoTv,crestIv,contact_info,teamColorsTv,line1,line2,playersRv,playersTv,addressTv" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
