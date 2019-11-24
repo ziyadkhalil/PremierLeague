@@ -12,7 +12,7 @@ import retrofit2.http.Path
  */
 interface ApiService {
     @GET("competitions/${Constants.PREMIER_LEAGUE_CODE}/teams")
-    fun fetchTeams(): Observable<TeamsResponseWrapper>
+    fun fetchTeams(): Single<TeamsResponseWrapper>
 
     @GET("teams/{team_id}")
     fun fetchTeamPlayer(@Path(value = "team_id") id: Int): Single<PlayersResponseWrapper>

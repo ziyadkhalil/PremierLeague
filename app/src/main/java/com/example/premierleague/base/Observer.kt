@@ -6,5 +6,5 @@ package com.example.premierleague.base
  */
 interface Observer {
     fun observe()
-    fun handleAction(action: Action)
+    fun handleAction(action: Action) = Unit
 }

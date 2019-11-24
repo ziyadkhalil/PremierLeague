@@ -36,15 +36,15 @@
         app:layout_constraintTop_toBottomOf="@id/websiteTv"
         app:layout_constraintStart_toStartOf="@id/websiteTv"
         tools:text = "El stad"
-        android:textSize="10sp"
+        android:textSize="12sp"
         />
 
     <TextView
         app:layout_constraintVertical_chainStyle="spread"
         android:id="@+id/colorsTv"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="@id/teamNameTv"
+        android:layout_height="wrap_content"
+        app:layout_constraintBaseline_toBaselineOf="@id/teamNameTv"
         app:layout_constraintBottom_toTopOf="@id/favBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/teamNameTv"
@@ -57,7 +57,6 @@
         app:icon_type="heart"
         app:icon_size="25dp"
         app:layout_constraintTop_toBottomOf="@id/colorsTv"
-        app:layout_constraintBottom_toBottomOf="@id/venueTv"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

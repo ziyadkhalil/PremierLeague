@@ -11,16 +11,17 @@ import kotlinx.android.synthetic.main.player_vh.view.*
 /**
  * Created by Ziyad on Nov, 2019
  */
-class PlayersListAdapter(var players: MutableList<Player>): RecyclerView.Adapter<PlayersListAdapter.ViewHolder>() {
+class PlayersListAdapter: RecyclerView.Adapter<PlayersListAdapter.ViewHolder>() {
+
+    var players: List<Player> = listOf()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
          val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.player_vh, parent, false)
          return ViewHolder(view)
     }
 
-    override fun getItemCount(): Int {
-        return players.count()
-    }
+    override fun getItemCount(): Int = players.count()
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.view.nameTv.text = players[position].name

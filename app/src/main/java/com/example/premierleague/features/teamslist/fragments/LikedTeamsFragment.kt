@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.OrientationHelper
 import com.example.premierleague.R
-import com.example.premierleague.base.Action
 import com.example.premierleague.base.BaseFragment
 import com.example.premierleague.features.teamslist.TeamsViewModel
 import com.example.premierleague.features.teamslist.adapters.TeamsListAdapter
@@ -30,10 +29,6 @@ class LikedTeamsFragment : BaseFragment() {
                     teamsListAdapter.submitList(it)
                 }
             )
-    }
-
-    override fun handleAction(action: Action) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun onCreateView(

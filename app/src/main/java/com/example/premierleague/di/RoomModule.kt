@@ -13,7 +13,8 @@ import org.koin.dsl.module
  * Created by Ziyad on Nov, 2019
  */
 val roomModule = module {
-    single { Room.databaseBuilder(
+    single {
+        Room.databaseBuilder(
         androidApplication(), AppDatabase::class.java, "football-db")
         .build()
     }

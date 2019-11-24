@@ -2,17 +2,20 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:isScrollContainer="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:descendantFocusability="blocksDescendants"
         android:id="@+id/constraintContainer"
+        android:focusableInTouchMode="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp">
+        android:layout_marginTop="30dp">
 
         <TextView
             android:id="@+id/teamNameTv"
@@ -126,6 +129,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:barrierDirection="bottom"
+            app:layout_constraintBottom_toTopOf="@id/playersTv"
             app:constraint_referenced_ids="crestIv,addressTv,phoneNoTv,emailTv,websiteTv" />
 
         <ImageView
@@ -135,6 +139,7 @@
             android:layout_marginTop="20dp"
             android:src="@color/colorPrimaryDark"
             app:layout_constraintTop_toBottomOf="@id/barrier"
+            app:layout_constraintBottom_toTopOf="@id/playersTv"
             tools:ignore="ContentDescription" />
 
         <TextView
@@ -143,6 +148,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="@string/squad"
+            app:layout_constraintBottom_toTopOf="@id/playersRv"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="@id/teamNameTv"
             app:layout_constraintTop_toBottomOf="@id/line2" />
@@ -150,11 +156,13 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/playersRv"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:overScrollMode="ifContentScrolls"
             app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="ifContentScrolls"
+            android:layout_marginTop="20dp"
+            android:focusable="false"
+            android:scrollbars="vertical"
+            android:scrollbarFadeDuration="1"
             app:layout_constraintTop_toBottomOf="@id/playersTv" />
 
         <ProgressBar

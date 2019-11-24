@@ -17,4 +17,5 @@ interface Repo {
     fun likeTeam(team: Team): Completable
     fun unlikeTeam(team: Team): Completable
     fun getTeam(teamId: Int): Single<Team>
+    fun getDatabaseEmptyObservable(): Observable<Single<List<Team>>>
 }

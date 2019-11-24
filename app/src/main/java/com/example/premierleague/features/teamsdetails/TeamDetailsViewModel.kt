@@ -1,9 +1,9 @@
 package com.example.premierleague.features.teamsdetails
 
+import com.example.premierleague.base.Action
 import com.example.premierleague.base.BaseViewModel
 import com.example.premierleague.data.Repo
 import com.example.premierleague.data.model.Team
-import com.example.premierleague.base.Action
 import io.reactivex.Observable
 import io.reactivex.ObservableEmitter
 import io.reactivex.rxkotlin.subscribeBy
@@ -27,8 +27,7 @@ class TeamDetailsViewModel(private val repo: Repo): BaseViewModel() {
             .subscribeOn(Schedulers.computation())
             .subscribeBy(
                 onSuccess = { team -> teamEmitter.onNext(team); localTeam = team },
-                onError = {
-                    errorsEmitter.onNext(Action.NETWORK_ERROR) }
+                onError = { errorsEmitter.onNext(Action.NETWORK_ERROR) }
             )
         )
     }
